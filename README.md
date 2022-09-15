@@ -100,12 +100,13 @@ Basic usage within a content Markdown file:
 ```
 
 This will create an image gallery using the default options (see below). Note
-the YAML-like syntax of the items: Linebreaks and spacing is important.
+the YAML-like syntax of the items: Linebreaks and spacing are important, as is
+the initial hyphen at the beginning of each item.
 
 The first line of each item is the path to the file. The second line is the
-`alt` text, and is required. The third line is the image caption, and is
+image `alt` text, and is required. The third line is the image caption, and is
 optional; in the example above, the first and third items have captions while
-the second does not.
+the second item does not.
 
 ### Settings
 
@@ -116,7 +117,19 @@ and/or by adding your own classes using the `class` parameter.
 If a parameter is not set in the shortcode, it takes the default value noted
 below.
 
-| Parameter | Description         | Type of value                                                   | Default |
-| --------- | ------------------- | --------------------------------------------------------------- | ------- |
-| `class`   | CSS classes         | Any valid CSS class name. Multiple classes separated by spaces. | _None_  |
-| `cols`    | Columns in the grid | Any whole number                                                | 3       |
+| Parameter           | Description                                                    | Type of value                                                                                                                                                             | Default                     |
+| ------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| `class`             | CSS classes                                                    | Any valid CSS class name. Multiple classes separated by spaces.                                                                                                           | _None_                      |
+| `cols`              | columns in the grid                                            | Any whole number.                                                                                                                                                         | 3                           |
+| `bg`                | background of the entire grid                                  | Any valid CSS value for [`background`](https://developer.mozilla.org/en-US/docs/Web/CSS/background), e.g. colors, gradients, or references to other images are all valid. | `white`                     |
+| `imageratio`        | aspect ratio for the images                                    | Any valid CSS value for [`aspect-ratio`](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio), e.g. `0.5` or `2 / 1`.                                           | `1`                         |
+| `imageoutlinesize`  | width of the outline on an active image                        | Any valid CSS [length](https://developer.mozilla.org/en-US/docs/Web/CSS/length).                                                                                          | `0.25rem`                   |
+| `imageoutlinecolor` | color of the outline on an active image                        | Any valid CSS [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).                                                                                      | `gray`                      |
+| `cappad`            | padding inside the caption                                     | Any valid CSS [length](https://developer.mozilla.org/en-US/docs/Web/CSS/length).                                                                                          | `0.25rem`                   |
+| `capsize`           | font size of the caption                                       | Any valid CSS value for [`font-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size).                                                                        | `1rem`                      |
+| `capcolor`          | font color of the caption                                      | Any valid CSS [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).                                                                                      | `black`                     |
+| `capbg`             | background of the caption                                      | Any valid CSS value for [`background`](https://developer.mozilla.org/en-US/docs/Web/CSS/background), e.g. colors, gradients, or references to other images are all valid. | `rgba(255, 255, 255, 0.65)` |
+| `inactiveopacity`   | opacity of the grid that is not active when an image is zoomed | Any valid CSS value for [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity), i.e. a decimal between `0` (transparent) and `1` (fully opaque).           | `0.333`                     |
+| `scale`             | factor by which images should be scaled when zoomed            | Any number                                                                                                                                                                | `2`                         |
+| `durexpand`         | duration of time an image takes to zoom in                     | Any valid CSS [time length](https://developer.mozilla.org/en-US/docs/Web/CSS/time)                                                                                        | `0.5s`                      |
+| `durshrink`         | duration of time an image takes to zoom out                    | Any valid CSS [time length](https://developer.mozilla.org/en-US/docs/Web/CSS/time)                                                                                        | `0.25s`                     |
