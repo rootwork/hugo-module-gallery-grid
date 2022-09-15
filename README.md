@@ -86,20 +86,26 @@ and other assets.
 
 Basic usage within a content Markdown file:
 
-```md
+```
 {{< gallery >}}
-
-- apple.jpg A red apple My favorite type of apple!
-- banana.jpg An unripe banana
-- pineapple.jpg Fresh pineapple I love pineapple the most {{</ gallery >}}
+- apple.jpg
+  A red apple
+  My favorite type of apple!
+- banana.jpg
+  An unripe banana
+- pineapple.jpg
+  Fresh pineapple
+  I love pineapple the most
+{{</ gallery >}}
 ```
 
 This will create an image gallery using the default options (see below). Note
-the YAML-like syntax of the items: Linebreaks and spacing is important. The
-first line of each item is the path to the file. The second line is the `alt`
-text, and is required. The third line is the image caption, and is optional; in
-the example above, the first and third items have captions while the second does
-not.
+the YAML-like syntax of the items: Linebreaks and spacing is important.
+
+The first line of each item is the path to the file. The second line is the
+`alt` text, and is required. The third line is the image caption, and is
+optional; in the example above, the first and third items have captions while
+the second does not.
 
 ### Settings
 
