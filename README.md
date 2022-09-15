@@ -57,10 +57,10 @@ This theme component and shortcode was created and is maintained as a [Hugo modu
 
 2. At the command line, run:
 
-```sh
-hugo mod get github.com/rootwork/hugo-module-gallery-grid
-hugo mod tidy
-```
+   ```sh
+   hugo mod get github.com/rootwork/hugo-module-gallery-grid
+   hugo mod tidy
+   ```
 
 ## Usage
 
