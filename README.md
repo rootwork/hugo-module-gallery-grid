@@ -152,8 +152,8 @@ is all you need.
 
 Unfortunately, if you want the images to be zoomable and navigable by keyboard
 -- that is, accessible to all users -- you pretty much need JavaScript to do it.
-And at that point, you might as well use the JS for some other niceties, like
-making sure the image doesn't scale off the edge of the screen.
+And at that point, you might as well use JS for some other niceties, like making
+sure the image doesn't scale off the edge of the screen.
 
 **Why can't you just point your shortcode at a directory of images?**
 
@@ -172,9 +172,9 @@ you have counterexamples, please let me know.) Having alternative text, of
 course, also helps when images don't load due to an unstable connection, when
 users have images turned off, and for search indexing.
 
-**Why specify the number of columns? Why base it around image sizes and that
+**Why specify the number of columns? Why not base it around image sizes and that
 cool
-[adaptive-grid technique](https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/)?**
+[adaptive grid technique](https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/)?**
 
 That is _indeed_ a cool technique, and I use it when presenting a grid of
 non-zoomable images (or other elements). The JS required to ensure images aren't
@@ -189,6 +189,7 @@ image formats like WebP?**
 I think it'd be great to incorporate some of the functionality from image
 components like [@hyas/images](https://www.npmjs.com/package/@hyas/images) and
 [@danielfdickinson/image-handling-mod-hugo-dfd](https://github.com/danielfdickinson/image-handling-mod-hugo-dfd)
+-- or hand off the individual image rendering to them when they're present --
 and welcome PRs that accomplish this.
 
 ## Prior art
@@ -225,6 +226,14 @@ uses [Justified Gallery](https://miromannino.github.io/Justified-Gallery/) and
 This
 [particular implementation](https://github.com/mfg92/hugo-shortcode-gallery/blob/master/layouts/shortcodes/gallery.html)
 does result in several additional files needing to be loaded one-by-one.
+
+## Contribution guidelines
+
+I welcome Pull Requests, as well as suggestions, questions or bug reports via
+issues.
+[Read our contribution guidelines](https://github.com/rootwork/hugo-module-gallery-grid/blob/main/docs/CONTRIBUTING.md)
+and note our
+[code of conduct](https://github.com/rootwork/hugo-module-gallery-grid/blob/main/docs/CODE_OF_CONDUCT.md).
 
 ## License
 
