@@ -42,21 +42,28 @@ Please try to create bug reports that are:
    git checkout -b feat/amazing_feature
    ```
 
-4. Do your work.
+4. This project uses npm (Node v16.x) to manage a few project maintenance
+   things, so run:
 
-5. Commit your changes:
+   ```sh
+   npm install
+   ```
+
+5. Do your work.
+
+6. Commit your changes:
 
    ```sh
    git commit -m 'feat: add amazing_feature'
    ```
 
-6. Push to the branch:
+7. Push to the branch:
 
    ```sh
    git push origin feat/amazing_feature
    ```
 
-7. [Open a Pull Request](https://github.com/rootwork/hugo-module-gallery-grid/compare?expand=1)
+8. [Open a Pull Request](https://github.com/rootwork/hugo-module-gallery-grid/compare?expand=1)
    and wait for feedback.
 
 ## 🎉 **Thank you for your contribution!**
