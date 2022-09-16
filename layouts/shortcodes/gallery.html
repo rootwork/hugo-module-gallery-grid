@@ -1,0 +1,60 @@
+{{/* USAGE */}}
+{{- $items := split .Inner "\n- " -}}
+{{- $class := .Get "class" -}}
+{{- $gridCols := .Get "cols" | default "3" -}}
+{{- $gridBackground := .Get "bg" | default "white" | safeCSS -}}
+{{- $imageAspectRatio := .Get "imageratio" | default "1" | safeCSS -}}
+{{- $imageActiveOutlineSize := .Get "imageoutlinesize" | default "0.25rem" | safeCSS -}}
+{{- $imageActiveOutlineColor := .Get "imageoutlinecolor" | default "gray" | safeCSS -}}
+{{- $captionPadding := .Get "cappad" | default "0.25rem" | safeCSS -}}
+{{- $captionFontSize := .Get "capsize" | default "1rem" | safeCSS -}}
+{{- $capFontColor := .Get "capcolor" | default "black" | safeCSS -}}
+{{- $capBackground := .Get "capbg" | default "rgba(255, 255, 255, 0.65)" | safeCSS -}}
+{{- $inactiveOpacity := .Get "inactiveopacity" | default "0.333" | safeCSS -}}
+{{- $scaleFactor := .Get "scale" | default "2" -}}
+{{- $durationExpand := .Get "durexpand" | default "0.5s" | safeCSS -}}
+{{- $durationShrink := .Get "durshrink" | default "0.25s" | safeCSS -}}
+<section
+  class="
+    grid-gallery
+  {{- with $class }}
+    {{ . }}
+  {{ end -}}
+  "
+  style="
+    --grid-cols: {{ $gridCols }};
+    --grid-gallery-background: {{ $gridBackground }};
+    --grid-gallery-image-aspect: {{ $imageAspectRatio }};
+    --grid-gallery-image-active-outline-size: {{ $imageActiveOutlineSize }};
+    --grid-gallery-image-active-outline-color: {{ $imageActiveOutlineColor }};
+    --grid-gallery-caption-padding: {{ $captionPadding }};
+    --grid-gallery-caption-font-size: {{ $captionFontSize }};
+    --grid-gallery-caption-font-color: {{ $capFontColor }};
+    --grid-gallery-caption-background: {{ $capBackground }};
+    --grid-gallery-background-opacity: {{ $inactiveOpacity }};
+    --grid-gallery-scale-factor: {{ $scaleFactor }};
+    --grid-gallery-duration-expand: {{ $durationExpand }};
+    --grid-gallery-duration-shrink: {{ $durationShrink }};
+  "
+>
+  <ul role="list">
+    {{ range $items -}}
+      {{- $fields := split . "\n  " -}}
+      {{- $src := index $fields 0 }}
+      {{- $alt := index $fields 1 }}
+      {{- $cap := index $fields 2 }}
+      {{ with $src -}}
+        <li>
+          <button>
+            <figure>
+              <img src="{{ . }}" {{ with $alt }}alt="{{ . }}"{{ end }} />
+              {{ with $cap -}}
+                <figcaption>{{ . }}</figcaption>
+              {{ end -}}
+            </figure>
+          </button>
+        </li>
+      {{ end -}}
+    {{ end -}}
+  </ul>
+</section>
