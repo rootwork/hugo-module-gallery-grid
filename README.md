@@ -225,3 +225,7 @@ uses [Justified Gallery](https://miromannino.github.io/Justified-Gallery/) and
 This
 [particular implementation](https://github.com/mfg92/hugo-shortcode-gallery/blob/master/layouts/shortcodes/gallery.html)
 does result in several additional files needing to be loaded one-by-one.
+
+## License
+
+[AGPL 3.0](https://github.com/rootwork/hugo-module-gallery-grid/blob/main/LICENSE)
