@@ -136,13 +136,13 @@ below.
 
 ## Frequently asked questions
 
-**Why don't the images fill the screen?**
+**Why don't zoomed images fill the screen?**
 
 I wanted a simple image gallery that would be useful in the context of a larger
-article, rather than the portfolio-style galleries that use a full-screen image
-in a modal. If that's what you're looking for, I recommend
-[Photoswipe](https://photoswipe.com/). See [Prior art](#prior-art) for links to
-Hugo implementations of it.
+article, allowing for zoomable-but-not-huge images rather than the
+portfolio-style galleries that use a full-screen image in a modal. If that's
+what you're looking for, I recommend [Photoswipe](https://photoswipe.com/). See
+[Prior art](#prior-art) for links to Hugo implementations of it.
 
 **Why use JavaScript at all? You could just scale the images with CSS.**
 
