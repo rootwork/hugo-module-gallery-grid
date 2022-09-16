@@ -187,10 +187,11 @@ in making it work. I welcome PRs that would make this possible.
 image formats like WebP?**
 
 I think it'd be great to incorporate some of the functionality from image
-components like [@hyas/images](https://www.npmjs.com/package/@hyas/images) and
+components like [@hyas/images](https://www.npmjs.com/package/@hyas/images),
 [@danielfdickinson/image-handling-mod-hugo-dfd](https://github.com/danielfdickinson/image-handling-mod-hugo-dfd)
--- or hand off the individual image rendering to them when they're present --
-and welcome PRs that accomplish this.
+or [@hugo-mods/lazyimg](https://github.com/hugo-mods/lazyimg) -- or hand off the
+individual image rendering to them when they're present -- and welcome PRs that
+accomplish this.
 
 ## Prior art
 

@@ -1,4 +1,10 @@
 [module]
-[module.hugoVersion]
-min = "0.85.0"
-extended = true
+  [module.hugoVersion]
+    min = "0.85.0"
+    extended = true
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
