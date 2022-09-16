@@ -1,0 +1,37 @@
+{
+  "name": "hugo-module-gallery-grid",
+  "version": "1.0.0",
+  "description": "A Hugo shortcode to arrange images in a gallery with grid layout. Hugo module includes image zooming, captions, config and styling options, and accessibility.",
+  "main": "go.mod",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rootwork/hugo-module-gallery-grid.git"
+  },
+  "keywords": [
+    "hugo",
+    "hugo-module",
+    "hugo-site",
+    "hugo-modules",
+    "go-modules",
+    "hugo-shortcode",
+    "hugo-shortcodes",
+    "images",
+    "gallery"
+  ],
+  "author": "Ivan Boothe <npm@rootwork.org> (https://rootwork.org/)",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/rootwork/hugo-module-gallery-grid/issues"
+  },
+  "homepage": "https://github.com/rootwork/hugo-module-gallery-grid#readme",
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "prettier-plugin-go-template": "^0.0.13",
+    "pretty-quick": "^3.1.3"
+  }
+}
