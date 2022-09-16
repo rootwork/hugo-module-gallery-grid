@@ -133,3 +133,95 @@ below.
 | `scale`             | factor by which images should be scaled when zoomed            | Any number.                                                                                                                                                                | `2`                                                     |
 | `durexpand`         | duration of time an image takes to zoom in                     | Any valid CSS [time length](https://developer.mozilla.org/en-US/docs/Web/CSS/time).                                                                                        | `0.5s`                                                  |
 | `durshrink`         | duration of time an image takes to zoom out                    | Any valid CSS [time length](https://developer.mozilla.org/en-US/docs/Web/CSS/time).                                                                                        | `0.25s`                                                 |
+
+## Frequently asked questions
+
+**Why don't the images fill the screen?**
+
+I wanted a simple image gallery that would be useful in the context of a larger
+article, rather than the portfolio-style galleries that use a full-screen image
+in a modal. If that's what you're looking for, I recommend
+[Photoswipe](https://photoswipe.com/). See [Prior art](#prior-art) for links to
+Hugo implementations of it.
+
+**Why use JavaScript at all? You could just scale the images with CSS.**
+
+This is absolutely true,
+[`transform: scale()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+is all you need.
+
+Unfortunately, if you want the images to be zoomable and navigable by keyboard
+-- that is, accessible to all users -- you pretty much need JavaScript to do it.
+And at that point, you might as well use the JS for some other niceties, like
+making sure the image doesn't scale off the edge of the screen.
+
+**Why can't you just point your shortcode at a directory of images?**
+
+A key part of this theme component was to allow for captions. In my experience
+it's clumsier to grab a directory and then have to map captions to the files in
+it than just listing the filenames with their captions in the first place. But
+see [prior art](#prior-art) for gallery components like this.
+
+**Why is `alt` text required for each image?**
+
+Since accessibility was an important goal of this theme component, I didn't want
+to enable overlooking the `alt` text for assistive devices. While there are
+[some images that should have empty `alt` text](https://webaim.org/techniques/alttext/#decorative),
+I don't believe that would ever be true in the context of an image gallery. (If
+you have counterexamples, please let me know.) Having alternative text, of
+course, also helps when images don't load due to an unstable connection, when
+users have images turned off, and for search indexing.
+
+**Why specify the number of columns? Why base it around image sizes and that
+cool
+[adaptive-grid technique](https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/)?**
+
+That is _indeed_ a cool technique, and I use it when presenting a grid of
+non-zoomable images (or other elements). The JS required to ensure images aren't
+zoomed off the screen requires knowing how many columns there are and where an
+individual element is in the rows and columns. I believe this would be doable
+within a variable grid but for my use case couldn't justify investing the time
+in making it work. I welcome PRs that would make this possible.
+
+**What about using Hugo's image processing to render responsive images and new
+image formats like WebP?**
+
+I think it'd be great to incorporate some of the functionality from image
+components like [@hyas/images](https://www.npmjs.com/package/@hyas/images) and
+[@danielfdickinson/image-handling-mod-hugo-dfd](https://github.com/danielfdickinson/image-handling-mod-hugo-dfd)
+and welcome PRs that accomplish this.
+
+## Prior art
+
+This particular approach to displaying an image gallery was heavily derived from
+Silvestar Bistrović's article on Smashing Magazine,
+"[How To Build An Expandable Accessible Gallery](https://www.smashingmagazine.com/2021/10/build-expandable-accessible-gallery/)."
+I opted to change a few things, like switching from CSS grids to flexbox (so
+that "left-over" items in the bottom rows could be easily centered); making the
+aspect ratio, number of columns, and scale factors configurable; and adding
+captions. But his use of JavaScript in order to make the gallery
+[accessible and navigable by keyboard](https://www.smashingmagazine.com/2021/10/build-expandable-accessible-gallery/#keyboard-support)
+remains largely intact.
+
+[Photoswipe](https://photoswipe.com/) remains a good option if you want the
+traditional "fill the screen"-style gallery.
+[@victoriadrake](https://github.com/victoriadrake)'s
+[Call me Sam](https://github.com/victoriadrake/hugo-theme-sam) Hugo theme has a
+[nice integration with Photoswipe](https://github.com/victoriadrake/hugo-theme-sam/pull/89),
+contributed by [@arthurbailao](https://github.com/arthurbailao), although it
+doesn't support captions. Bruno Amaral also used Photoswipe in
+[his Hugo gallery component](https://brunoamaral.eu/post/creating-a-gallery-component-for-the-hugo-static-site-generator/),
+which uses frontmatter resources and loads images from a directory.
+
+[Hugo Codex's image gallery](https://hugocodex.org/add-ons/image-gallery/) uses
+[Lightbox.js](https://victordiego.com/lightbox/) to display zoomed images, but
+Lightbox.js isn't keyboard-navigable, and captions only appear on image
+thumbnails (not on zoomed images).
+
+[@mfg92's gallery shortcode](https://github.com/mfg92/hugo-shortcode-gallery)
+uses [Justified Gallery](https://miromannino.github.io/Justified-Gallery/) and
+[Swipebox](https://brutaldesign.github.io/swipebox/). These are semi-accessible
+(the markup isn't semantic, but they are keyboard-navigable) and rely on jQuery.
+This
+[particular implementation](https://github.com/mfg92/hugo-shortcode-gallery/blob/master/layouts/shortcodes/gallery.html)
+does result in several additional files needing to be loaded one-by-one.
