@@ -1,7 +1,32 @@
 # Hugo shortcode for image gallery grid
 
 A Hugo module that provides a shortcode for arranging images in a gallery with a
-grid layout.
+grid layout. Easily include image galleries in your Markdown content!
+
+Turn this:
+
+```
+{{< gallery >}}
+- 1.jpg
+  cat
+- 2.jpg
+  cat
+  This one is my favorite
+- 3.jpg
+  cat
+- 4.jpg
+  cat
+- 5.jpg
+  cat
+- 6.jpg
+  cat
+- 7.jpg
+  cat
+  Double the kitten, double the fun.
+{{</ gallery >}}
+```
+
+into this:
 
 https://user-images.githubusercontent.com/79733/190837133-c85cfd3e-0787-456e-97a3-5e33955a05df.mp4
 
@@ -18,6 +43,8 @@ https://user-images.githubusercontent.com/79733/190837133-c85cfd3e-0787-456e-97a
 - Accessible keyboard navigation
 - Progressive enhancement: When JavaScript is disabled or inaccessible, image
   gallery still displays (without zooming)
+- Stores images with posts in
+  [Hugo Page Bundles](https://gohugo.io/content-management/page-bundles/)
 
 ## Setup
 
@@ -112,14 +139,20 @@ Basic usage within a content Markdown file:
 {{</ gallery >}}
 ```
 
-This will create an image gallery using the default options (see below). Note
-the YAML-like syntax of the items: Linebreaks and spacing are important, as is
-the initial hyphen at the beginning of each item.
+This will create an image gallery using the default options (see below).
+
+**Note the YAML-like syntax of the items: Linebreaks and spacing are important,
+as is the initial hyphen at the beginning of each item.**
 
 The first line of each item is the path to the file. The second line is the
 image `alt` text, and is required. The third line is the image caption, and is
 optional; in the example above, the first and third items have captions while
 the second item does not.
+
+This theme component assumes use of
+[Hugo Page Bundles](https://gohugo.io/content-management/page-bundles/): Images
+should be stored in the same directory or a subdirectory as the Markdown file
+itself.
 
 ### Settings
 
