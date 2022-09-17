@@ -82,6 +82,17 @@ and other assets.
    hugo mod tidy
    ```
 
+### Updating
+
+To pull in new releases of this theme component, run:
+
+```sh
+hugo mod get -u github.com/rootwork/hugo-module-gallery-grid
+```
+
+Alternatively you can run `hugo mod get -u` with no URL to update **all** your
+Hugo modules, or `hugo mod get -u ./...` to update all modules recursively.
+
 ## Usage
 
 Basic usage within a content Markdown file:
