@@ -3,11 +3,13 @@
 A Hugo module that provides a shortcode for arranging images in a gallery with a
 grid layout.
 
+![Example of the image gallery grid](docs/images/nav-by-mouse.webm)
+
 ## Features
 
 - Easy to use shortcode allowing for an arbitrary number of images
-- Image captions
 - Image zooming, with configurable scale factor
+- Optional image captions
 - Mobile-first, displaying images at full widths on small screens
 - Configurable image aspect ratios
 - Configurable number of columns in the image gallery grid
