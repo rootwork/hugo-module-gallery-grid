@@ -8,20 +8,20 @@ Turn this:
 ```
 {{< gallery >}}
 - 1.jpg
-  cat
+  A small cat
 - 2.jpg
-  cat
+  A tiny kitten
   This one is my favorite
 - 3.jpg
-  cat
+  An adolescent cat
 - 4.jpg
-  cat
+  Smol kitteh
 - 5.jpg
-  cat
+  Cat in the snow
 - 6.jpg
-  cat
+  Surprised kitten
 - 7.jpg
-  cat
+  Kitten and a mirror
   Double the kitten, double the fun.
 {{</ gallery >}}
 ```
