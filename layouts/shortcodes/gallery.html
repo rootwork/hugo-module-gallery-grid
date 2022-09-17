@@ -14,7 +14,6 @@
 {{- $scaleFactor := .Get "scale" | default "2" -}}
 {{- $durationExpand := .Get "durexpand" | default "0.5s" | safeCSS -}}
 {{- $durationShrink := .Get "durshrink" | default "0.25s" | safeCSS -}}
-<!-- Gallery grid CSS -->
 <style>
   {{ $sass := resources.Get "scss/gallery-grid.scss" }}
   {{ ($sass | resources.ToCSS | minify).Content | safeCSS }}
@@ -22,7 +21,6 @@
 <section
   class="
     grid-gallery
-    grid-gallery-test
   {{- with $class }}
     {{ . }}
   {{ end -}}
@@ -64,7 +62,5 @@
     {{ end -}}
   </ul>
 </section>
-
-<!-- Gallery grid JS -->
 {{ $js := resources.Get "js/gallery-grid.js" | js.Build }}
 <script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
