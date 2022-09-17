@@ -64,7 +64,7 @@ and other assets.
 - [Hugo](https://github.com/gohugoio/hugo/releases/latest) **extended** version
   0.85 or greater.
 - [Go](https://go.dev/dl/) version
-  [1.12 or greater](https://gohugo.io/hugo-modules/use-modules/#prerequisite).
+  [1.15 or greater](https://gohugo.io/hugo-modules/use-modules/#prerequisite).
 - An existing Hugo site, such as by running `hugo new site <sitename>`.
 - An existing
   [Hugo theme](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme)
