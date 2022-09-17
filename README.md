@@ -278,8 +278,8 @@ does result in several additional files needing to be loaded one-by-one.
 
 I welcome Pull Requests, as well as suggestions, questions or bug reports via
 issues.
-[Read our contribution guidelines](https://github.com/rootwork/hugo-module-gallery-grid/blob/main/docs/CONTRIBUTING.md)
-and note our
+[Read the contribution guidelines](https://github.com/rootwork/hugo-module-gallery-grid/blob/main/docs/CONTRIBUTING.md)
+and note the
 [code of conduct](https://github.com/rootwork/hugo-module-gallery-grid/blob/main/docs/CODE_OF_CONDUCT.md).
 
 ## License
