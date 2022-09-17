@@ -58,3 +58,6 @@
     {{ end -}}
   </ul>
 </section>
+
+{{ $script := resources.Get "js/gallery-grid.js" }}
+<script src="{{ $script.Permalink }}"></script>
