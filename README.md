@@ -3,7 +3,7 @@
 A Hugo module that provides a shortcode for arranging images in a gallery with a
 grid layout.
 
-![Example of the image gallery grid](docs/images/nav-by-mouse.webm)
+![Example of the image gallery grid](https://github.com/rootwork/hugo-module-gallery-grid/blob/main/docs/images/nav-by-mouse.webm?raw=true)
 
 ## Features
 
