@@ -3,7 +3,7 @@
 A Hugo module that provides a shortcode for arranging images in a gallery with a
 grid layout.
 
-https://user-images.githubusercontent.com/rootwork/hugo-module-gallery-grid/main/docs/images/nav-by-mouse.mp4
+https://user-images.githubusercontent.com/79733/190837133-c85cfd3e-0787-456e-97a3-5e33955a05df.mp4
 
 ## Features
 
