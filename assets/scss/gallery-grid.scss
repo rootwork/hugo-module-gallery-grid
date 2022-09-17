@@ -21,7 +21,8 @@ $grid-gallery-breakpoint: 400px;
       font-size: inherit;
     }
 
-    // Accessibly hiding .key-note by default and displaying when tabbed/focused.
+    // Accessibly hiding .key-note by default and displaying when
+    // tabbed or focused.
     &:not(:focus):not(:focus-visible):not(:active) {
       clip: rect(0 0 0 0);
       clip-path: inset(50%);

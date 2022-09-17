@@ -112,23 +112,26 @@ const activateElem = ($elems, $parent, $elem, $button, lengthOfElems, i) => {
   // Reset all elements
   deactiveElems($elems, $parent, $elem, $button)
 
-  // If there is active element, set focus to it, unset global active element, and prevent from further executing
+  // If there is active element, set focus to it, unset global active element,
+  // and prevent from further executing
   if ($activeElem) {
     $activeElem.focus()
     $activeElem = false
     return
   }
 
-  // Set default transform origin to center (expand out)
+  // Set default vertical transform origin to center (expand out)
   let transformOrigin = 'center'
 
-  // If item is in the first row, set transform origin to top (expand down)
+  // If item is in the first row, set vertical transform origin to top (expand
+  // down)
   const isFirstRow = i < cols
   if (isFirstRow) {
     transformOrigin = 'top'
   }
 
-  // If item is in the last row, set transform origin to bottom (expand up)
+  // If item is in the last row, set vertical transform origin to bottom (expand
+  // up)
   const isLastRow = i + 1 > rows * cols
   if (isLastRow) {
     transformOrigin = 'bottom'
@@ -156,17 +159,20 @@ const activateElem = ($elems, $parent, $elem, $button, lengthOfElems, i) => {
   }
 
   if (isFirstCol) {
-    // If the item is in the first column, set transform origin to left (expand right), unless it is left over (thus center-positioned), in which case set transform origin to center (expand out)
+    // If the item is in the first column, set horizontal transform origin to
+    // left (expand right), unless it is left over (thus center-positioned), in
+    // which case set horizontal transform origin to center (expand out)
     if (!isRemainder) {
       transformOrigin += ' left'
     } else {
       transformOrigin += ' center'
     }
   } else if (isLastCol) {
-    // If the item is in the last column, set transform origin to right (expand left)
+    // If the item is in the last column, set horizontal transform origin to
+    // right (expand left)
     transformOrigin += ' right'
   } else {
-    // Otherwise, set transform origin to center (expand out)
+    // Otherwise, set horizontal transform origin to center (expand out)
     transformOrigin += ' center'
   }
 
@@ -179,11 +185,9 @@ const activateElem = ($elems, $parent, $elem, $button, lengthOfElems, i) => {
   setTimeout(() => {
     // Set high CSS z-index to avoid overlay issues
     $elem.style.zIndex = 100
-    // Set parent class
+    // Set classes and CSS transform
     $parent.classList.add('is-zoomed')
-    // Set item class
     $elem.classList.add('is-zoomed')
-    // Set item CSS transform
     $elem.style.transform = `scale(${scale})`
     // Set item aria expanded
     $button.setAttribute('aria-expanded', true)
@@ -264,17 +268,12 @@ if ($grid) {
   // Find all list items
   const $items = $grid.querySelectorAll('li')
 
-  // Check if there are list items
+  // If there are list items, run operations
   if ($items.length) {
-    // Get the transition timeout from CSS
     getTimeouts($items)
-    // Set data attributes for calculations
     setDataAttrs($items, $grid)
-    // Set click events on anchors
     setClicks($items, $grid)
-    // Set keyboard events
     setKeyboardEvents()
-    // Set resize events
     setResizeEvents($items, $grid)
   }
 }
