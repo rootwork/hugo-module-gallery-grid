@@ -89,6 +89,11 @@ $grid-gallery-breakpoint: 400px;
     width: 100%;
     overflow: hidden;
     cursor: pointer;
+
+    &:focus-visible {
+      outline: calc(var(--grid-gallery-image-active-outline-size) / 2) solid
+        var(--grid-gallery-image-active-outline-color);
+    }
   }
 
   figure {
